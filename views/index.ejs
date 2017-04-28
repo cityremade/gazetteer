@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>GEOLYTIX</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="/public/css/leaflet.css"/>
+    <link rel="stylesheet" href="/public/css/map.css"/>
+</head>
+
+<body>
+
+<div id="map" class="map"></div>
+
+<a id="logo_link" href="https://geolytix.co.uk">GEOLYTIX</a>
+
+<div class="glx_md__input">
+    <input id="inputGazetteer" type="text" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+</div>
+
+<button id="btnZoomIn" class="mapButton noselect">
+    <i class="material-icons">add</i>
+</button>
+
+<button id="btnZoomOut" class="mapButton noselect">
+    <i class="material-icons">remove</i>
+</button>
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="/public/js/jquery.js"></script>
+<script type="application/javascript" src="/public/js/leaflet.js"></script>
+<script type="application/javascript" src="/public/js/gazetteer.js"></script>
+
+</html>
