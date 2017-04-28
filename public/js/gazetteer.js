@@ -58,7 +58,9 @@ inputGazetteer.keydown(function (e) {
             },
             success: function (data) {
 
-                createLatLonFeature([data.geometry.location.lng, data.geometry.location.lat]);
+                //createLatLonFeature([data.geometry.location.lng, data.geometry.location.lat]);
+                console.log(data)
+                drawAgasBox(data)
 
             }
         })
@@ -89,7 +91,23 @@ function createLatLonFeature(lnglat){
             );
         }
     }).addTo(map);
-
     map.fitBounds(layerGaz.getBounds());
 
+}
+
+function drawAgasBox(data){
+    sw_lat = data.geometry.bounds.southwest.lat;
+    sw_lng = data.geometry.bounds.southwest.lng;
+    
+    sw = [sw_lat, sw_lng];
+    
+    ne_lat = data.geometry.bounds.northeast.lat;
+    ne_lng = data.geometry.bounds.northeast.lng;
+    
+    ne = [ne_lat, ne_lng];
+    
+    bounds = [sw, ne];
+    
+    L.rectangle(bounds).addTo(map);
+    map.fitBounds(bounds);
 }
